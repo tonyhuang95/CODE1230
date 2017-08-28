@@ -65,3 +65,26 @@ footer {
 	padding:1%;
 }
 
+.topnav{
+	position:fixed;
+	top:0;
+
+}
+
+.topnav a{
+	float:left;
+	display:block;
+	color:#111111;
+	text-align: center;
+	padding:14px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	background-color:#f9835f;
+
+}
+
+.topnav a:hover {
+	background-color:#099730;
+	color:#111111;
+}
+

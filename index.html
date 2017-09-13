@@ -1,139 +1,48 @@
  <!DOCTYPE html>
 <html> 
+
+<link rel="stylesheet" type="text/css" href="style.css"/>
 <head>
 
+<title> Sydney Age By Sex Urban Data </title>
 
 
 <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="page1.html">Questions</a></li>
   <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Maps</a>
+    <a href="javascript:void(0)" class="dropbtn">MAPPING</a>
     <div class="dropdown-content">
-      <a href="map.html">Age 0-19</a>
-      <a href="map2.html">Age 20-39</a>
-      <a href="map3.html">Age 40-59</a>
-      <a href="map4.html">Age 60+</a>
+      <a href="map.html">AGE 0-19</a>
+      <a href="map2.html">AGE 20-39</a>
+      <a href="map3.html">AGE 40-59</a>
+      <a href="map4.html">AGE 60+</a>
     </div>
   </li>
+  <li><a href="page1.html">ABOUT SYDNEY</a></li>
+  <li><a href="index.html">HOME</a></li>
+
 </ul>
 
-<link rel="stylesheet" type="text/css" href="style.css"/>
-<title> Sydney Age By Sex Urban Data </title>
-<h1> Sydney's Age Distribution </h1><br><br></head>
+<ul2>
+URBAN MODELLING
+</ul2>
+
+<div class="bgimg1">
+  <div class="caption">
+    <span class="border">SYDNEY'S AGE DISTRIBUTION</span>
+  </div>
+</div>
+
+<div class="caption2">This model studies the distribution of Sydney's population by age, with a developed comparison between four age groups.
+Having a population of over five million as well as being the twelveth most expensive city in the world, 
+
+
+</div>
+
+
 
 <body>
 
 
-
-<div class="slideshow-container">
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 9</div>
-    <img src="AGE0-4.png" style="width:100%">
-    <div class="text">Age 0-4</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 9</div>
-    <img src="AGE 5-9.png" style="width:100%">
-    <div class="text">Age 5-9</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 9</div>
-    <img src="AGE 10-14.png" style="width:100%">
-    <div class="text">Age 10-14</div>
-  </div>
-
-   <div class="mySlides fade">
-    <div class="numbertext">4 / 9</div>
-    <img src="AGE 15-19.png" style="width:100%">
-    <div class="text">Age 15-19</div>
-  </div>
-
-   <div class="mySlides fade">
-    <div class="numbertext">5 / 9</div>
-    <img src="AGE 20-24.png" style="width:100%">
-    <div class="text">Age 20-24</div>
-  </div>
-
-   <div class="mySlides fade">
-    <div class="numbertext">6 / 9</div>
-    <img src="AGE 25-29.png" style="width:100%">
-    <div class="text">Age 25-29</div>
-  </div>
-
-   <div class="mySlides fade">
-    <div class="numbertext">7 / 9</div>
-    <img src="AGE 30-34.png" style="width:100%">
-    <div class="text">Age 30-34</div>
-  </div>
-
-   <div class="mySlides fade">
-    <div class="numbertext">8 / 9</div>
-    <img src="AGE 35-39.png" style="width:100%">
-    <div class="text">Age 35-39</div>
-  </div>
-
-   <div class="mySlides fade">
-    <div class="numbertext">9 / 9</div>
-    <img src="AGE 40-44.png" style="width:100%">
-    <div class="text">Age 40-44</div>
-  </div>
-
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-  <span class="dot" onclick="currentSlide(4)"></span> 
-  <span class="dot" onclick="currentSlide(5)"></span> 
-  <span class="dot" onclick="currentSlide(6)"></span>
-  <span class="dot" onclick="currentSlide(7)"></span>
-  <span class="dot" onclick="currentSlide(8)"></span>
-  <span class="dot" onclick="currentSlide(9)"></span>
-
-
-</div>
-
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-</script>
-
-
-
-
-
-<footer> 
 
 </body>
 

@@ -9,7 +9,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
-        #map { position:absolute; top:0%; bottom:0; width:80%; }
+        #map { position:absolute; top:0; bottom:0; width:80%; }
     </style>
 </head>
 <body>
@@ -47,20 +47,23 @@ map.on('load', function() {
 
             'fill-extrusion-color': {
                 // Get the fill-extrusion-color from the source 'color' property.
-                'property': '0-19',
+                'property': '60-100',
                 "stops": [
-                    [-0.5, 'black'],
-                    [0, 'light blue'],
-                    [2, 'blue']
+                    [-1, 'black'],
+                    [-0.5, 'grey'],
+                    [0, 'yellow'],
+                    [0.5, 'orange'],
+                    [1, 'red'],
+                    [2, 'white']
                     ]
 
             },
             'fill-extrusion-height': {
                 // Get fill-extrusion-height from the source 'height' property.
-                'property': 'Total_019',
+                'property': 'Total_60+',
                 "stops": [
                     [0, 0],
-                    [1, 10000]
+                    [1, 20000]
                     ]
             },
             'fill-extrusion-base': {

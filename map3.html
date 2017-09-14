@@ -9,7 +9,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:80%; }
+        #map { position:fixed; top:0; bottom:0; width:72%; }
     </style>
 </head>
 <body>
@@ -22,7 +22,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidG9ueWh1YW5nOTUiLCJhIjoiY2o2bHE5b3Q3MWl2aDJxb
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/tonyhuang95/cj6vq34xz8fjo2ssdir8bwmfo',
-    center: [151.209, -33.865],
+    center: [151, -33.865],
     zoom: 10,
     pitch: 40,
     bearing: 0
@@ -49,12 +49,9 @@ map.on('load', function() {
                 // Get the fill-extrusion-color from the source 'color' property.
                 'property': '40-59',
                 "stops": [
-                    [-1, 'black'],
-                    [-0.5, 'grey'],
-                    [0, 'yellow'],
-                    [0.5, 'orange'],
-                    [1, 'red'],
-                    [2, 'white']
+                    [-0.5, 'black'],
+                    [0, '#CF6766'],
+                    [2, 'red']
                     ]
 
             },
@@ -63,7 +60,7 @@ map.on('load', function() {
                 'property': 'Total_4059',
                 "stops": [
                     [0, 0],
-                    [1, 20000]
+                    [1, 10000]
                     ]
             },
             'fill-extrusion-base': {
@@ -77,8 +74,34 @@ map.on('load', function() {
     });
 });
 </script>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<ul>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">MAPPING</a>
+    <div class="dropdown-content">
+      <a href="map.html">AGE 0-19</a>
+      <a href="map2.html">AGE 20-39</a>
+      <a href="map3.html">AGE 40-59</a>
+      <a href="map4.html">AGE 60+</a>
+    </div>
+  </li>
+  <li><a href="page1.html">ABOUT</a></li>
+  <li><a href="index.html">HOME</a></li>
+
+</ul>
+<sidebar>
+<h1>AGE 40-59</h1>
+The proportion of age 40 to 59 out of the entire population is dislayed by the height on the map. The change of population from 2011 to 2016 is displayed by the colours where black represents a decrease and red an increase. It is observed that there is a general increase in a majority of suburbs due to generic population growth, and the model is adjusted to that by setting a 8% increase as the datum to represent a 8% total population growth.<br><br>
+Generally, the population change is minor apart from the areas of interest, the change has miniscule relation to the latte line and proportions are distributed rather evenly. <br><br>
+Specific areas of interest: <br>
+
+<li>The Ponds - Due to recent developments of new affordable housing and peaceful lifestyle, an influx of adults and older families has occured in the past 5 years. As well as three generation housing due to the ethnicity of families are more common.</li>
+<li>Sydney Olympic Park & Rhodes - A redeveloped area that emphasises on work, live and play has attracted young adults with their modern apartments.</li>
+<li>Edmondson Park - A South West growth center with new developments in the past 5 years, including a new train station and shopping centre. 
+<li>UNSW, USYD and MACQUARIE UNIVERSITY - Very low proportion of this age group in these areas as it is occupied by youth majority.
 
 
+</sidebar>
 
 </body>
 

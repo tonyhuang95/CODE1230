@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+    <script src ='./data.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:fixed; top:0; bottom:0; width:72%; }
+    </style>
+</head>
+<body>
+
+<div id='map'>
+</div>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoidG9ueWh1YW5nOTUiLCJhIjoiY2o2bHE5b3Q3MWl2aDJxbXloZ2l4Mms1ZSJ9.yQ1R1aw_sk3wRDB_i41bxQ';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/tonyhuang95/cj6vq34xz8fjo2ssdir8bwmfo',
+    center: [151, -33.865],
+    zoom: 10,
+    pitch: 40,
+    bearing: 0
+});
+
+map.on('load', function() {
+
+    map.addLayer({
+        'id': 'room-extrusion',
+        'type': 'fill-extrusion',
+        'source': {
+            // Geojson Data source used in vector tiles, documented at
+            // https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+            'type': 'geojson',
+            'data': data
+        },
+        'paint': {
+            // 'fill-color': '#088',
+            // 'fill-opacity': 0.8
+            // See the Mapbox Style Spec for details on property functions
+            // https://www.mapbox.com/mapbox-gl-style-spec/#types-function
+
+            'fill-extrusion-color': {
+                // Get the fill-extrusion-color from the source 'color' property.
+                'property': '60-100',
+                "stops": [
+                    [-0.5, 'black'],
+                    [0, '#CF6766'],
+                    [1, 'red']
+                    ]
+
+            },
+            'fill-extrusion-height': {
+                // Get fill-extrusion-height from the source 'height' property.
+                'property': 'Total_60+',
+                "stops": [
+                    [0, 0],
+                    [1, 20000]
+                    ]
+            },
+            'fill-extrusion-base': {
+                // Get fill-extrusion-base from the source 'base_height' property.
+                'property': 'base_height',
+                'type': 'identity'
+            },
+            // Make extrusions slightly opaque for see through indoor walls.
+            'fill-extrusion-opacity': 0.8
+        }
+    });
+});
+</script>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<ul>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">MAPPING</a>
+    <div class="dropdown-content">
+      <a href="map.html">AGE 0-19</a>
+      <a href="map2.html">AGE 20-39</a>
+      <a href="map3.html">AGE 40-59</a>
+      <a href="map4.html">AGE 60+</a>
+    </div>
+  </li>
+  <li><a href="page1.html">ABOUT</a></li>
+  <li><a href="index.html">HOME</a></li>
+
+</ul>
+
+<sidebar>
+<h1>AGE 60+</h1>
+Generally, the population change is minor apart from the areas of interest, the change has miniscule relation to the latte line and proportions are distributed rather evenly. <br><br>
+Specific areas of interest: <br>
+<li>The Ponds - Due to recent developments of new affordable housing and peaceful lifestyle, an influx of adults and older families has occured in the past 5 years. As well as three generation housing due to the ethnicity of families are more common.</li>
+<li>Outer Sydney - Areas such as Menangle, Dural, Penrith and Camden has seen a large influx of older people due to their large land sizes and peaceful lifestyle.
+
+
+</sidebar>
+
+</body>
+
+</html>
